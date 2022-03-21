@@ -6,6 +6,7 @@ namespace NyanKaiheila.Net.Core.Models.Kaiheila.Event.Extra
     /// <summary>
     /// 开黑啦文字消息事件扩展
     /// </summary>
+    [KaiheilaMessage(KaiheilaEventType.TextMessage)]
     public class KaiheilaTextMessageExtra : KaiheilaExtraBase
     {
         /// <summary>

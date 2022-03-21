@@ -6,7 +6,8 @@ namespace NyanKaiheila.Net.Core.Models.Kaiheila.Event.Extra
     /// <summary>
     /// 开黑啦文件消息事件扩展
     /// </summary>
-    public class KaiheilaFileMessageExtra
+    [KaiheilaMessage(KaiheilaEventType.FileMessage)]
+    public class KaiheilaFileMessageExtra : KaiheilaExtraBase
     {
         /// <summary>
         /// 事件扩展类型
