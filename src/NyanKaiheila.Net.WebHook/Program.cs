@@ -1,5 +1,5 @@
-using NyanKaiheila.Net.Core.ISerives;
-using NyanKaiheila.Net.Core.Serives;
+using NyanKaiheila.Net.Core.IServices;
+using NyanKaiheila.Net.Core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();

@@ -1,4 +1,4 @@
-﻿namespace NyanKaiheila.Net.Core.Serives
+﻿namespace NyanKaiheila.Net.Core.Services
 {
     /// <summary>
     /// 服务获取

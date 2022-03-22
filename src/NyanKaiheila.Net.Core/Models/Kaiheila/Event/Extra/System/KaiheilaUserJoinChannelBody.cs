@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NyanKaiheila.Net.Core.Attributes;
 using NyanKaiheila.Net.Core.Enums;
 
 namespace NyanKaiheila.Net.Core.Models.Kaiheila.Event.Extra.System

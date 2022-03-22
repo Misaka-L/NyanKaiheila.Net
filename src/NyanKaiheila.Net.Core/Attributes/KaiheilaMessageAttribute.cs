@@ -1,7 +1,7 @@
 ﻿
 using NyanKaiheila.Net.Core.Enums;
 
-namespace NyanKaiheila.Net.Core.Models.Kaiheila.Event
+namespace NyanKaiheila.Net.Core.Attributes
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class KaiheilaMessageAttribute : Attribute

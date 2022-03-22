@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 using NyanKaiheila.Net.Core.Enums;
+using NyanKaiheila.Net.Core.IServices;
+using NyanKaiheila.Net.Core.Models;
 using NyanKaiheila.Net.Core.Models.Kaiheila.Event;
-using NyanKaiheila.Net.Core.Serives;
 using NyanKaiheila.Net.Core.Utils;
 using NyanKaiheila.Net.WebHook.Models;
 using NyanKaiheila.Net.WebHook.Utils;
@@ -15,14 +17,19 @@ namespace NyanKaiheila.Net.WebHook.Controllers
     {
         private readonly ILogger<WebHookController> _logger;
         private readonly IBotService _botService;
+        private readonly IOptions<BotOptions> _botOptions;
 
-        private readonly string key = "YourEncryptKey";
-        private readonly string verifyToken = "YourVerifyToken";
+        private readonly string key;
+        private readonly string verifyToken;
 
-        public WebHookController(ILogger<WebHookController> logger, IBotService botService)
+        public WebHookController(ILogger<WebHookController> logger, IBotService botService, IOptions<BotOptions> botOptions)
         {
             _logger = logger;
             _botService = botService;
+            _botOptions = botOptions;
+
+            key = _botOptions.Value.EncryptKey;
+            verifyToken = _botOptions.Value.VerifyToken;
         }
 
         [HttpPost]

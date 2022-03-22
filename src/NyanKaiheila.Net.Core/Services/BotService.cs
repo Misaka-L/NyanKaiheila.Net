@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NyanKaiheila.Net.Core.IServices;
+using NyanKaiheila.Net.Core.Models;
 using NyanKaiheila.Net.Core.Models.Kaiheila.Event;
 
-namespace NyanKaiheila.Net.Core.ISerives
+namespace NyanKaiheila.Net.Core.Services
 {
     /// <summary>
     /// Bot 服务
@@ -13,12 +16,14 @@ namespace NyanKaiheila.Net.Core.ISerives
         private ILogger<BotService> _logger;
         private ICommandService _commandService;
         private IEventHandleService _eventHandleService;
+        private IOptions<BotOptions> _botOptions;
 
-        public BotService(ILogger<BotService> logger, ICommandService commandService, IEventHandleService eventHandleService)
+        public BotService(ILogger<BotService> logger, ICommandService commandService, IEventHandleService eventHandleService, IOptions<BotOptions> botOptions)
         {
             _logger = logger;
             _commandService = commandService;
             _eventHandleService = eventHandleService;
+            _botOptions = botOptions;
         }
 
         public async void Run()

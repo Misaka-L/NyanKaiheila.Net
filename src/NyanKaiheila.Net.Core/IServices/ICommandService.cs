@@ -1,4 +1,4 @@
-﻿namespace NyanKaiheila.Net.Core.ISerives
+﻿namespace NyanKaiheila.Net.Core.IServices
 {
     /// <summary>
     /// Command 服务接口
